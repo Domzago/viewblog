@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
+                <section class="section">
+                    <div class="columns">
+                        <div class="column is-8 is-offset-2">
+                            {% for post in posts %}
+                            <div class="content is-medium">
+                                <h5 class="subtitle is-4">{{post.posted|date:"F d, Y"}}</h5>
+                                <a href="{% url 'detail' post.id %}">
+                                    <h3 class="title">{{post.title}}</h3>
+                                </a>
+                                <p>{{post.intro}}</p>
+                                
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+{% endblock %}

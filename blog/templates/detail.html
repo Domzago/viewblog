@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Detail{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-body">
+        <div class="container">
+            <section class="section">
+                <div class="columns">
+                    <div class="column is-8 is-offset-2">
+                        
+                        <div class="content is-medium">
+                            <a class="mb-3 btn btn-sm btn-info" href="{% url 'update' post.id %}">Update</a>
+                            <a class="mb-3 btn btn-sm btn-danger" href="{% url 'delete' post.id %}">Delete</a>
+                            <h5 class="subtitle is-4">{{post.posted|date:"F d,Y"}}</h5>
+                            <h3 class="title">{{post.title}}</h3>
+                            <p>{{post.intro}}</p>
+                            <p>{{post.content}}</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+{% endblock %}

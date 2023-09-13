@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Update{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-body">
+        <div class="container">
+            <section class="section">
+                <div class="columns">
+                    <div class="column is-8 is-offset-2">
+                        
+                        <div class="content is-medium">
+                            <form method="post" action=".">
+                                {% csrf_token %}
+
+                               <div class="mb-3 mt-3 text-center">
+                                 {{form.as_p}}
+                                 <input type="submit" class="btn btn-sm btn-info">
+
+                                </div>
+                            </form>              
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+{% endblock %}

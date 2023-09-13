@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Update{% endblock %}
+
+{% block content %}
+    <form method="post" action=".">
+        {% csrf_token %}
+        <div>
+            <h1>Are you sure you want to delete ({{list}}) </h1>
+
+        <a class="btn btn-sm btn-info" href="{% url 'home' %}">Cancel</a>
+        <input type="submit" class="btn btn-sm btn-danger">
+        </div>
+    </form>
+{% endblock %}
